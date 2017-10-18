@@ -1,22 +1,22 @@
 void rotate_left()
 {
-	int lMotor = -10;
-	int rMotor = 100;
+	int lMotor = -20;
+	int rMotor = 80;
 
 	motor[motorA] = lMotor;
 	motor[motorB] = rMotor;
 
-	wait1Msec(700);
+	wait1Msec(500);
 }
 
 
 void rotate_right()
 {
-	int lMotor = 100;
-	int rMotor = -10;
+	int lMotor = 80;
+	int rMotor = -20;
 
 	motor[motorA] = lMotor;
 	motor[motorB] = rMotor;
 
-	wait1Msec(700);
+	wait1Msec(500);
 }

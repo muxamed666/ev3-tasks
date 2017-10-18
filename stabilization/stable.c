@@ -44,6 +44,9 @@ void stable()
 		leftMotor = 80 - (delta * 1.5);
 		rightMotor = 80 + (delta * 1.5);
 
+		if(leftMotor < 20) leftMotor = 20;
+		if(rightMotor < 20) rightMotor = 20;
+
 		//displayTextLine(1, "ahead = %d", distanceAhead);
 		displayTextLine(2, "rightIR = %d --> delta = %d", distanceRight, delta);
 }
@@ -53,18 +56,19 @@ void turns()
 		int distanceAhead = getAheadSensorValue();
 		int distanceRight = getRightSensorValue();
 
-		if(distanceAhead < (wall * 2))
+		/*
+		if(distanceAhead < (wall * 3))
 		{
 			leftMotor = 20;
 			rightMotor = 20;
-		}
+		}*/
 
-		if(distanceAhead < wall)
+		if(distanceAhead < (wall * 2))
 		{
 			leftMotor = 0;
 			rightMotor = 0;
 
-			if(distanceRight < 40)
+			if(distanceRight < 60)
 			{
 				rotate_left();
 			}
